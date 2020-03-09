@@ -1,7 +1,7 @@
 package testing
 
 import (
-	"github.com/LukeJelly/rotateimage"
+	"github.com/LukeJelly/rotateimage/rotateimage"
 	"testing"
 )
 
@@ -66,18 +66,18 @@ func Test10x10(t *testing.T){
 }
 
 func runNormalTest(original [][]int, expected [][]int, t *testing.T){
-	actual := rotateimage.Rotate90(original)
+	actual := rotateimage.RotateImage90(original)
 	compareTwoGroups(expected, actual, t)
 }
 
 //Assumes all arrays are squares.
 func compareTwoGroups(expected [][]int, actual [][]int, t *testing.T){
 	for row := 0; row < len(expected); row++ {
-		for col := 0; col < len(expected[0]; col++) {
-			if (expected[row][col] != actual[row][col]) {
+		for col := 0; col < len(expected[0]); col++ {
+			if expected[row][col] != actual[row][col] {
 				expectedValue := expected[row][col]
 				actualValue := actual[row][col]
-				t.ErrorF("Expected %d at row: %d col: %d but was %d", expected, row, col, actualValue)
+				t.Errorf("Expected %d at row: %d col: %d but was %d", expectedValue, row, col, actualValue)
 			}
 		}
 	}
