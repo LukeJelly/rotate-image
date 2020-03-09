@@ -1,3 +1,3 @@
-module github.com/LukeJelly/rotateimage/src
+module github.com/LukeJelly/rotateimage/rotateimage
 
 go 1.14
