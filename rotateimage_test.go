@@ -3,7 +3,6 @@ package testing
 import (
 	"github.com/LukeJelly/rotateimage/rotateimage"
 	"testing"
-	"fmt"
 )
 
 
