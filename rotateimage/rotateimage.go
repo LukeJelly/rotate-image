@@ -3,28 +3,29 @@ package rotateimage
 //RotateImage90 rotates the given square matrix by 90 degrees
 func RotateImage90(a [][]int) [][]int {
     size := len(a)
-    rArr := make([][]int, size)
-    for k := range(a){
-        rArr[k] = make([]int, size)
-    }
     
     if(size == 1){
         return a;
     }
-    for i := 0; i < len(a); i++ {
-        for j:=0; j< len(a); j++ {
-            value := a[i][j]
-            rArr[j][abs(i-(size-1))] = value
-        }
+    
+    xPos := 0
+    yPos := 0
+    for i := 0; i < size * size; i++ {
+        movedValue := a[xPos][yPos]
+        newPos := rotationMatrix90Degrees(xPos,yPos, size)
+        xPos = newPos[0]
+        yPos = newPos[1]
+        temp := a[xPos][yPos]
+        a[xPos][yPos] = movedValue
+        movedValue = temp
     }
-    return rArr
+    return a
 }
 
-func abs(num int) int{
-    if (num < 0){
-        return -1 * num
-    }else{
-        return num
-    }
+func rotationMatrix90Degrees(xPos int, yPos int, size int) [2]int {
+    var location [2]int
+    location[0] = yPos
+    location[1] = (-1 * xPos) + (size - 1)
+    return location
 }
 
