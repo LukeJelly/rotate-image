@@ -1,7 +1,7 @@
 package testing
 
 import (
-	"github.com/LukeJelly/rotate-image/rotateimage"
+	"github.com/LukeJelly/rotateimage"
 	"testing"
 )
 
