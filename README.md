@@ -8,7 +8,7 @@ Prompt: You are given an n x n 2D matrix that represents an image. Rotate
  the new location for every given point. 
   
   Give any point in a Matrix (ex, (0,0)), if we multiply that point by
-  a rotation matrix for -90 degreed, we get a new point (0,0). Of course this
+  a rotation matrix for -90 degrees, we get a new point (0,0). Of course this
   rotates around the origin, and we want to rotate in place so we have to shift 
   that up by the size of the matrix - 1.  So our next location because (0,0 + (len(a)-1)) = (0,4).
   Which is where the 'a' would go after the rotation.  We then pull out what is 
