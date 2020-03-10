@@ -6,22 +6,12 @@ Prompt: You are given an n x n 2D matrix that represents an image. Rotate
  a different way but couldn't shake how much this seemed like it needed a 
  linearly algebra approach. I solved it using a 2x2 rotation matrix to find
  the new location for every given point. 
-
- I will use a 5x5 matrix to explain the algorithm but it works for any nxn
- matrix.  
-
-     Matrix A                   Rotation Matrix B 
-  [[a,b,c,d,e],             [[cos(theta), -sin(theta)],
-   [f,g,h,i,j],              [sin(theta), cos(theta)]]
-   [k,l,m,n,o],                Evaluated at -90 degrees
-   [p,q,r,s,t],                      [[0, 1],
-   [u,v,w,x,y]]                      [-1, 0]] 
   
-  Give any point in the matrix A (eq, (0,0)), if we put multiply that point by
-  matrix B we get a new point (0,0).  Of course this rotates around the origin,
-  and we want to rotate in place so we have to shift that up by the size of the
-  matrix - 1.  So our next location because (0,0 + (len(a)-1)) = (0,4).  Which
-  is where the 'a' would go after the rotation.  We then pull out what is 
+  Give any point in a Matrix (ex, (0,0)), if we multiply that point by
+  a rotation matrix for -90 degreed, we get a new point (0,0). Of course this
+  rotates around the origin, and we want to rotate in place so we have to shift 
+  that up by the size of the matrix - 1.  So our next location because (0,0 + (len(a)-1)) = (0,4).
+  Which is where the 'a' would go after the rotation.  We then pull out what is 
   currently in that location and put the a there.  We can then take our point
   (0,4) and put it back through the rotation matrix to find where the next point
   will be.  This will happen 4 times before we get back to where we start.   *
