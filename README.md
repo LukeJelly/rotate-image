@@ -9,13 +9,13 @@ Prompt: You are given an n x n 2D matrix that represents an image. Rotate
 
  I will use a 5x5 matrix to explain the algorithm but it works for any nxn
  matrix.  
-     
-  A = [[a,b,c,d,e],            B= [[cos(theta), -sin(theta)],
-      [f,g,h,i,j],                [sin(theta), cos(theta)]]
-      [k,l,m,n,o],                
-      [p,q,r,s,t],             B Evaluated at -90 degrees
-      [u,v,w,x,y]]                      [[0, 1],
-                                        [-1, 0]] 
+
+     Matrix A                   Rotation Matrix B 
+  [[a,b,c,d,e],             [[cos(theta), -sin(theta)],
+   [f,g,h,i,j],              [sin(theta), cos(theta)]]
+   [k,l,m,n,o],                Evaluated at -90 degrees
+   [p,q,r,s,t],                      [[0, 1],
+   [u,v,w,x,y]]                      [-1, 0]] 
   
   Give any point in the matrix A (eq, (0,0)), if we put multiply that point by
   matrix B we get a new point (0,0).  Of course this rotates around the origin,
