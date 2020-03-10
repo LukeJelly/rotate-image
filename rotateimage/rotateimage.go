@@ -23,22 +23,19 @@ func rotateThroughFour(row int, col int, size int, arr [][]int){
 
     xPos := row
     yPos := col
-    doneFullCircle := false
+    // doneFullCircle := false
 
-    for !doneFullCircle {
-        newPos := rotationMatrix90Degrees(xPos,yPos, size)
+    for i:=0; i < 4; i++ {
+        newPos := findNewPostionInMatrix(xPos,yPos, size)
         xPos = newPos[0]
         yPos = newPos[1]
         temp := arr[xPos][yPos]
         arr[xPos][yPos] = movedValue
         movedValue = temp
-        if (temp < 0){
-            doneFullCircle = true
-        }
     }
 }
 
-func rotationMatrix90Degrees(xPos int, yPos int, size int) [2]int {
+func findNewPostionInMatrix(xPos int, yPos int, size int) [2]int {
     var location [2]int
     location[0] = yPos
     location[1] = (-1 * xPos) + (size-1)
