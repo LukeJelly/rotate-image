@@ -45,7 +45,7 @@ func RotateImage90(arr [][]int) [][]int {
     size := len(arr)
     
     if(size == 1){
-        return arr;
+        return arr
     }
 
     for i := 0; i <= size / 2; i++ {
