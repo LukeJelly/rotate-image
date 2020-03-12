@@ -58,7 +58,7 @@ func RotateImage90(arr [][]int) [][]int {
 
 func rotateThroughFour(row int, col int, size int, arr [][]int){
     startValue := arr[row][col]
-    movedValue := startValue;
+    movedValue := startValue
     arr[row][col] *= -1
 
     xPos := row
