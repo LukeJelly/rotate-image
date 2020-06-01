@@ -1,3 +1,4 @@
+#TEST
 .PHONY: build test
 
 build:
